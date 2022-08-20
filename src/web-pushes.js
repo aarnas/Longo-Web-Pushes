@@ -7,7 +7,7 @@ const vapidDetails = {
   subject: "mailto:test@test.test"
 };
 
-function sendNotifications(subscriptions, title, body) {
+export function sendNotifications(subscriptions, title, body) {
   // Create the notification content.
   const notification = JSON.stringify({
     title,

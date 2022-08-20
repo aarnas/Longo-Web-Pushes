@@ -5,6 +5,7 @@ const __dirname = path.resolve();
 
 import { notifyMe, notifyAll } from './web-pushes.js';
 import { addSubscription, removeSubscription } from './db.js';
+import { longoIntervalChecks } from './longoIntervalChecks.js';
 
 const app = express();
 app.use(bodyparser.json());
@@ -33,3 +34,5 @@ app.get('/', (request, response) => {
 const listener = app.listen(3654, () => {
   console.log(`Listening on port ${listener.address().port}`);
 });
+
+longoIntervalChecks();
